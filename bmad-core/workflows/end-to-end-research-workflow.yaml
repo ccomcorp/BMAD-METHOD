@@ -1,0 +1,115 @@
+
+# <!-- Powered by BMAD™ Core -->
+workflow:
+  id: end-to-end-research
+  name: End-to-End Advertising Research Workflow
+  description: >-
+    Complete research workflow from project initiation through data collection,
+    analysis, validation, synthesis, and delivery.
+  type: research
+  project_types:
+    - market-research
+    - consumer-research
+    - competitive-intelligence
+    - campaign-analysis
+    - brand-research
+
+  sequence:
+    - agent: research-orchestration-manager
+      action: initiate_project
+      creates: research-project-plan.md
+      notes: "Define research objectives, scope, timeline, and agent assignments."
+
+    - agent: data-collection-orchestrator
+      action: plan_data_collection
+      creates: data-collection-plan.md
+      requires: research-project-plan.md
+      notes: "Identify data sources, validate quality, schedule collection activities."
+
+    - step: parallel_research_execution
+      description: "Core and specialist research agents conduct parallel research streams"
+      agents:
+        - market-intelligence-lead
+        - consumer-insights-specialist
+        - competitive-intelligence-analyst
+        - campaign-performance-analyst
+        - brand-perception-researcher
+        - digital-behavior-analyst
+        - media-landscape-researcher
+        - cultural-trends-analyst
+      notes: "Each agent conducts specialized research using appropriate methodologies."
+
+    - agent: statistical-validation-specialist
+      action: validate_analysis
+      requires: research-findings
+      notes: "Validate statistical rigor, significance testing, and methodology."
+
+    - agent: source-verification-auditor
+      action: verify_sources
+      requires: research-findings
+      notes: "Fact-check claims, assess source credibility, validate citations."
+
+    - agent: industry-context-expert
+      action: provide_context
+      requires: research-findings
+      notes: "Add industry benchmarks, regulatory context, best practices."
+
+    - agent: report-synthesis-director
+      action: synthesize_research
+      creates: executive-synthesis-report.md
+      requires: validated-research-findings
+      notes: "Integrate findings, prioritize insights, develop recommendations."
+
+    - agent: research-orchestration-manager
+      action: finalize_delivery
+      creates: final-deliverables
+      requires: executive-synthesis-report.md
+      notes: "Finalize reports, conduct stakeholder briefings, capture lessons learned."
+
+  flow_diagram: |
+    ```mermaid
+    graph TD
+        A[Project Initiation] --> B[Data Collection Planning]
+        B --> C[Parallel Research Execution]
+        C --> D[Market Intelligence]
+        C --> E[Consumer Insights]
+        C --> F[Competitive Intelligence]
+        C --> G[Campaign Performance]
+        C --> H[Brand Perception]
+        C --> I[Digital Behavior]
+        C --> J[Media Landscape]
+        C --> K[Cultural Trends]
+        D --> L[Statistical Validation]
+        E --> L
+        F --> L
+        G --> L
+        H --> L
+        I --> L
+        J --> L
+        K --> L
+        L --> M[Source Verification]
+        M --> N[Industry Context]
+        N --> O[Research Synthesis]
+        O --> P[Final Delivery]
+
+        style A fill:#FFE4B5
+        style P fill:#90EE90
+        style O fill:#ADD8E6
+        style L fill:#F0E68C
+        style M fill:#F0E68C
+    ```
+
+  decision_guidance:
+    when_to_use:
+      - Comprehensive market research projects
+      - Strategic planning initiatives
+      - Market entry decisions
+      - Brand strategy development
+      - Campaign planning and optimization
+
+  handoff_prompts:
+    initiation_to_collection: "Research plan approved. Begin data collection planning and source identification."
+    collection_to_research: "Data sources validated. Begin parallel research execution across all domains."
+    research_to_validation: "Research findings complete. Begin statistical validation and source verification."
+    validation_to_synthesis: "Research validated. Begin synthesis and report development."
+    synthesis_to_delivery: "Synthesis complete. Finalize deliverables and prepare stakeholder briefings."

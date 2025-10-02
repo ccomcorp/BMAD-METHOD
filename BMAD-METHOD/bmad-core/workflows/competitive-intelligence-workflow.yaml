@@ -1,0 +1,81 @@
+
+# <!-- Powered by BMAD™ Core -->
+workflow:
+  id: competitive-intelligence
+  name: Competitive Intelligence Workflow
+  description: >-
+    Ongoing competitive monitoring and intelligence including competitor tracking,
+    market share analysis, and strategic assessment.
+  type: research
+  project_types:
+    - competitive-intelligence
+    - competitor-monitoring
+    - market-intelligence
+
+  sequence:
+    - agent: research-orchestration-manager
+      action: initiate_project
+      creates: competitive-intelligence-plan.md
+
+    - agent: competitive-intelligence-analyst
+      action: profile_competitors
+      creates: competitor-profiles.md
+      notes: "Create comprehensive profiles of key competitors."
+
+    - agent: competitive-intelligence-analyst
+      action: conduct_swot_analysis
+      creates: competitive-swot-analysis.md
+      notes: "Conduct SWOT analysis for each major competitor."
+
+    - agent: competitive-intelligence-analyst
+      action: track_market_share
+      creates: market-share-analysis.md
+      notes: "Track market share dynamics and trends."
+
+    - agent: market-intelligence-lead
+      action: analyze_competitive_dynamics
+      creates: competitive-dynamics-report.md
+      notes: "Analyze overall competitive dynamics and market forces."
+
+    - agent: brand-perception-researcher
+      action: benchmark_brand_perceptions
+      creates: competitive-brand-perception.md
+      notes: "Compare brand perceptions across competitors."
+
+    - agent: media-landscape-researcher
+      action: analyze_competitive_media
+      creates: competitive-media-analysis.md
+      notes: "Analyze competitor media strategies and spend."
+
+    - agent: source-verification-auditor
+      action: verify_competitive_intelligence
+      notes: "Verify accuracy and credibility of competitive intelligence."
+
+    - agent: report-synthesis-director
+      action: synthesize_competitive_intelligence
+      creates: competitive-intelligence-briefing.md
+      notes: "Create executive briefing with strategic implications."
+
+  flow_diagram: |
+    ```mermaid
+    graph TD
+        A[Project Initiation] --> B[Competitor Profiling]
+        A --> C[SWOT Analysis]
+        A --> D[Market Share Tracking]
+        A --> E[Competitive Dynamics]
+        A --> F[Brand Perception Benchmarking]
+        A --> G[Competitive Media Analysis]
+        B --> H[Source Verification]
+        C --> H
+        D --> H
+        E --> H
+        F --> H
+        G --> H
+        H --> I[Intelligence Synthesis]
+        I --> J[Competitive Intelligence Briefing]
+
+        style A fill:#FFE4B5
+        style J fill:#90EE90
+        style I fill:#ADD8E6
+        style H fill:#F0E68C
+    ```

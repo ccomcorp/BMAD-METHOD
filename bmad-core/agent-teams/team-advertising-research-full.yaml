@@ -1,0 +1,27 @@
+
+# <!-- Powered by BMAD™ Core -->
+bundle:
+  name: Full Marketing Research Team
+  icon: 🔬
+  description: Complete 14-agent advertising research system for comprehensive marketing intelligence
+agents:
+  - research-orchestration-manager
+  - market-intelligence-lead
+  - consumer-insights-specialist
+  - competitive-intelligence-analyst
+  - campaign-performance-analyst
+  - brand-perception-researcher
+  - digital-behavior-analyst
+  - media-landscape-researcher
+  - cultural-trends-analyst
+  - data-collection-orchestrator
+  - statistical-validation-specialist
+  - industry-context-expert
+  - report-synthesis-director
+  - source-verification-auditor
+workflows:
+  - end-to-end-research-workflow.yaml
+  - market-entry-research-workflow.yaml
+  - brand-health-assessment-workflow.yaml
+  - campaign-optimization-workflow.yaml
+  - competitive-intelligence-workflow.yaml

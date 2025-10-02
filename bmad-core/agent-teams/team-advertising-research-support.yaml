@@ -1,0 +1,15 @@
+
+# <!-- Powered by BMAD™ Core -->
+bundle:
+  name: Support & Synthesis Team
+  icon: ⚙️
+  description: Support 6-agent team for quality assurance and research synthesis
+agents:
+  - research-orchestration-manager
+  - data-collection-orchestrator
+  - statistical-validation-specialist
+  - industry-context-expert
+  - report-synthesis-director
+  - source-verification-auditor
+workflows:
+  - end-to-end-research-workflow.yaml

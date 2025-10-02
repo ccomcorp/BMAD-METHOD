@@ -1,0 +1,18 @@
+
+# <!-- Powered by BMAD™ Core -->
+bundle:
+  name: Core Research Team
+  icon: 🎯
+  description: Core 4-agent team for foundational market and competitive research
+agents:
+  - research-orchestration-manager
+  - market-intelligence-lead
+  - consumer-insights-specialist
+  - competitive-intelligence-analyst
+  - campaign-performance-analyst
+  - data-collection-orchestrator
+  - statistical-validation-specialist
+  - report-synthesis-director
+workflows:
+  - market-entry-research-workflow.yaml
+  - competitive-intelligence-workflow.yaml

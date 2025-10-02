@@ -1,0 +1,93 @@
+
+name: digital-behavior-report-tmpl
+description: Digital behavior analysis report template
+version: 1.0
+
+sections:
+  - name: executive_summary
+    title: Executive Summary
+    description: Key digital behavior insights
+    fields:
+      - name: key_findings
+        type: list
+        required: true
+      - name: optimization_priorities
+        type: list
+        required: true
+
+  - name: traffic_analysis
+    title: Traffic Analysis
+    description: Website/app traffic patterns and sources
+    fields:
+      - name: traffic_volume
+        type: text
+        required: true
+      - name: traffic_sources
+        type: nested_list
+        required: true
+      - name: traffic_trends
+        type: textarea
+        required: true
+
+  - name: user_behavior
+    title: User Behavior
+    description: User engagement and interaction patterns
+    fields:
+      - name: engagement_metrics
+        type: textarea
+        required: true
+      - name: navigation_patterns
+        type: textarea
+        required: true
+      - name: content_performance
+        type: nested_list
+        required: true
+
+  - name: conversion_analysis
+    title: Conversion Analysis
+    description: Conversion funnel and optimization
+    fields:
+      - name: conversion_rate
+        type: text
+        required: true
+      - name: funnel_analysis
+        type: textarea
+        required: true
+      - name: drop_off_points
+        type: list
+        required: true
+
+  - name: digital_journey
+    title: Digital Journey
+    description: Cross-device and cross-channel journey
+    fields:
+      - name: journey_paths
+        type: textarea
+        required: true
+      - name: device_usage
+        type: textarea
+        required: true
+      - name: touchpoint_analysis
+        type: nested_list
+        required: true
+
+  - name: optimization_recommendations
+    title: Optimization Recommendations
+    description: UX and conversion optimization recommendations
+    fields:
+      - name: ux_improvements
+        type: list
+        required: true
+      - name: conversion_optimizations
+        type: list
+        required: true
+      - name: testing_priorities
+        type: list
+        required: true
+
+metadata:
+  author: Digital Behavior Analyst
+  reviewers:
+    - Campaign Performance Analyst
+    - Report Synthesis Director
+  approval_required: true

@@ -1,0 +1,68 @@
+
+# <!-- Powered by BMAD™ Core -->
+workflow:
+  id: brand-health-assessment
+  name: Brand Health Assessment Workflow
+  description: >-
+    Comprehensive brand health evaluation including awareness, perception,
+    equity, competitive positioning, and strategic recommendations.
+  type: research
+  project_types:
+    - brand-health
+    - brand-tracking
+    - brand-strategy
+
+  sequence:
+    - agent: research-orchestration-manager
+      action: initiate_project
+      creates: brand-research-plan.md
+
+    - agent: brand-perception-researcher
+      action: track_brand_health
+      creates: brand-health-report.md
+      notes: "Measure awareness, consideration, preference, loyalty, and NPS."
+
+    - agent: brand-perception-researcher
+      action: map_brand_associations
+      creates: brand-association-map.md
+      notes: "Identify brand associations, personality, and positioning."
+
+    - agent: consumer-insights-specialist
+      action: analyze_consumer_perceptions
+      creates: consumer-brand-perception-report.md
+      notes: "Understand consumer attitudes, emotions, and connections to brand."
+
+    - agent: competitive-intelligence-analyst
+      action: benchmark_brand_positioning
+      creates: competitive-brand-benchmark.md
+      notes: "Compare brand metrics and positioning against competitors."
+
+    - agent: cultural-trends-analyst
+      action: assess_cultural_relevance
+      creates: cultural-relevance-assessment.md
+      notes: "Evaluate brand relevance to cultural trends and movements."
+
+    - agent: report-synthesis-director
+      action: synthesize_brand_strategy
+      creates: brand-strategy-recommendations.md
+      notes: "Develop comprehensive brand strategy recommendations."
+
+  flow_diagram: |
+    ```mermaid
+    graph TD
+        A[Project Initiation] --> B[Brand Health Tracking]
+        A --> C[Brand Association Mapping]
+        A --> D[Consumer Perception Analysis]
+        A --> E[Competitive Benchmarking]
+        A --> F[Cultural Relevance Assessment]
+        B --> G[Brand Strategy Synthesis]
+        C --> G
+        D --> G
+        E --> G
+        F --> G
+        G --> H[Brand Strategy Recommendations]
+
+        style A fill:#FFE4B5
+        style H fill:#90EE90
+        style G fill:#ADD8E6
+    ```

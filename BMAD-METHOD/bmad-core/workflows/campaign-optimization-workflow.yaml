@@ -1,0 +1,74 @@
+
+# <!-- Powered by BMAD™ Core -->
+workflow:
+  id: campaign-optimization
+  name: Campaign Optimization Workflow
+  description: >-
+    Comprehensive campaign performance analysis and optimization including
+    ROI analysis, channel performance, digital behavior, and media mix optimization.
+  type: research
+  project_types:
+    - campaign-optimization
+    - performance-analysis
+    - media-optimization
+
+  sequence:
+    - agent: research-orchestration-manager
+      action: initiate_project
+      creates: campaign-optimization-plan.md
+
+    - agent: campaign-performance-analyst
+      action: analyze_campaign_roi
+      creates: roi-analysis-report.md
+      notes: "Calculate ROI, ROAS, CPA, and identify performance drivers."
+
+    - agent: campaign-performance-analyst
+      action: build_attribution_model
+      creates: attribution-analysis-report.md
+      notes: "Build multi-touch attribution model and analyze conversion paths."
+
+    - agent: digital-behavior-analyst
+      action: analyze_digital_touchpoints
+      creates: digital-behavior-report.md
+      notes: "Analyze website/app behavior, conversion funnels, and UX issues."
+
+    - agent: media-landscape-researcher
+      action: evaluate_media_mix
+      creates: media-mix-analysis.md
+      notes: "Analyze media mix effectiveness and optimization opportunities."
+
+    - agent: consumer-insights-specialist
+      action: analyze_audience_performance
+      creates: audience-performance-report.md
+      notes: "Identify high-performing segments and audience insights."
+
+    - agent: statistical-validation-specialist
+      action: validate_performance_analysis
+      notes: "Validate statistical significance of performance findings."
+
+    - agent: report-synthesis-director
+      action: synthesize_optimization_recommendations
+      creates: campaign-optimization-recommendations.md
+      notes: "Develop prioritized optimization recommendations with testing plan."
+
+  flow_diagram: |
+    ```mermaid
+    graph TD
+        A[Project Initiation] --> B[ROI Analysis]
+        A --> C[Attribution Modeling]
+        A --> D[Digital Behavior Analysis]
+        A --> E[Media Mix Analysis]
+        A --> F[Audience Performance]
+        B --> G[Statistical Validation]
+        C --> G
+        D --> G
+        E --> G
+        F --> G
+        G --> H[Optimization Synthesis]
+        H --> I[Campaign Optimization Recommendations]
+
+        style A fill:#FFE4B5
+        style I fill:#90EE90
+        style H fill:#ADD8E6
+        style G fill:#F0E68C
+    ```

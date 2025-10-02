@@ -1,0 +1,18 @@
+
+# <!-- Powered by BMAD™ Core -->
+bundle:
+  name: Specialist Research Team
+  icon: 🔍
+  description: Specialist 4-agent team for brand, digital, media, and cultural research
+agents:
+  - research-orchestration-manager
+  - brand-perception-researcher
+  - digital-behavior-analyst
+  - media-landscape-researcher
+  - cultural-trends-analyst
+  - data-collection-orchestrator
+  - statistical-validation-specialist
+  - report-synthesis-director
+workflows:
+  - brand-health-assessment-workflow.yaml
+  - campaign-optimization-workflow.yaml

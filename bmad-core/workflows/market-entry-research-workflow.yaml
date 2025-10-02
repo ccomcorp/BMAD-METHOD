@@ -1,0 +1,78 @@
+
+# <!-- Powered by BMAD™ Core -->
+workflow:
+  id: market-entry-research
+  name: Market Entry Research Workflow
+  description: >-
+    Specialized workflow for evaluating market entry opportunities including
+    market analysis, consumer insights, competitive assessment, and recommendations.
+  type: research
+  project_types:
+    - market-entry
+    - expansion-strategy
+    - new-market-evaluation
+
+  sequence:
+    - agent: research-orchestration-manager
+      action: initiate_project
+      creates: market-entry-research-plan.md
+
+    - agent: market-intelligence-lead
+      action: analyze_market_landscape
+      creates: market-landscape-report.md
+      notes: "Analyze industry structure, market size, growth, and dynamics."
+
+    - agent: market-intelligence-lead
+      action: size_market
+      creates: market-sizing-report.md
+      notes: "Calculate TAM/SAM/SOM with multiple validation methods."
+
+    - agent: consumer-insights-specialist
+      action: profile_target_audience
+      creates: target-audience-profile.md
+      notes: "Develop psychographic profiles and identify consumer needs."
+
+    - agent: competitive-intelligence-analyst
+      action: analyze_competitive_landscape
+      creates: competitive-landscape-report.md
+      notes: "Profile competitors, assess market share, conduct SWOT analysis."
+
+    - agent: industry-context-expert
+      action: assess_regulatory_environment
+      creates: regulatory-assessment.md
+      notes: "Identify regulatory requirements, barriers, and compliance needs."
+
+    - agent: industry-context-expert
+      action: identify_best_practices
+      creates: best-practices-guide.md
+      notes: "Document industry best practices and success factors."
+
+    - agent: statistical-validation-specialist
+      action: validate_market_sizing
+      notes: "Validate market sizing methodology and assumptions."
+
+    - agent: report-synthesis-director
+      action: synthesize_market_entry_analysis
+      creates: market-entry-recommendation.md
+      notes: "Synthesize findings into go/no-go recommendation with strategy."
+
+  flow_diagram: |
+    ```mermaid
+    graph TD
+        A[Project Initiation] --> B[Market Landscape Analysis]
+        B --> C[Market Sizing]
+        A --> D[Target Audience Profiling]
+        A --> E[Competitive Analysis]
+        A --> F[Regulatory Assessment]
+        C --> G[Statistical Validation]
+        E --> G
+        G --> H[Best Practices]
+        D --> I[Synthesis]
+        F --> I
+        H --> I
+        I --> J[Market Entry Recommendation]
+
+        style A fill:#FFE4B5
+        style J fill:#90EE90
+        style I fill:#ADD8E6
+    ```

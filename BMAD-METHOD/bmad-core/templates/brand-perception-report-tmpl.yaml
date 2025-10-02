@@ -1,0 +1,96 @@
+
+name: brand-perception-report-tmpl
+description: Brand perception and health analysis report template
+version: 1.0
+
+sections:
+  - name: executive_summary
+    title: Executive Summary
+    description: Key brand health findings
+    fields:
+      - name: brand_health_status
+        type: text
+        required: true
+      - name: key_findings
+        type: list
+        required: true
+      - name: priority_actions
+        type: list
+        required: true
+
+  - name: brand_awareness
+    title: Brand Awareness
+    description: Brand awareness metrics and trends
+    fields:
+      - name: aided_awareness
+        type: text
+        required: true
+      - name: unaided_awareness
+        type: text
+        required: true
+      - name: awareness_trends
+        type: textarea
+        required: true
+
+  - name: brand_perception
+    title: Brand Perception
+    description: How the brand is perceived
+    fields:
+      - name: brand_associations
+        type: list
+        required: true
+      - name: brand_personality
+        type: textarea
+        required: true
+      - name: brand_positioning
+        type: textarea
+        required: true
+
+  - name: brand_equity
+    title: Brand Equity
+    description: Brand equity metrics and drivers
+    fields:
+      - name: brand_strength
+        type: text
+        required: true
+      - name: equity_drivers
+        type: list
+        required: true
+      - name: brand_value
+        type: text
+        required: false
+
+  - name: competitive_benchmarking
+    title: Competitive Benchmarking
+    description: Brand performance vs. competitors
+    fields:
+      - name: competitive_positioning
+        type: textarea
+        required: true
+      - name: share_of_voice
+        type: text
+        required: true
+      - name: competitive_gaps
+        type: list
+        required: true
+
+  - name: recommendations
+    title: Brand Strategy Recommendations
+    description: Recommendations for brand building
+    fields:
+      - name: positioning_recommendations
+        type: list
+        required: true
+      - name: communication_priorities
+        type: list
+        required: true
+      - name: brand_building_initiatives
+        type: list
+        required: true
+
+metadata:
+  author: Brand Perception Researcher
+  reviewers:
+    - Consumer Insights Specialist
+    - Report Synthesis Director
+  approval_required: true
